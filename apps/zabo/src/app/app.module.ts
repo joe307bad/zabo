@@ -9,10 +9,9 @@ import { ClientsModule, Transport } from '@nestjs/microservices';
     ClientsModule.register([
       {
         name: "SERVICE_A",
-        transport: Transport.TCP,
+        transport: Transport.NATS,
         options: {
-          host: "127.0.0.1",
-          port: 8888
+          servers: ['nats://0.0.0.0:4222'],
         }
       }
     ])
