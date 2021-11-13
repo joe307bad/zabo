@@ -1,6 +1,7 @@
 {
   "version": 2,
   "projects": {
+    "backups": "apps/backups",
     "zabo": "apps/zabo"
   }
 }
