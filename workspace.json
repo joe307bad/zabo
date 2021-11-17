@@ -2,6 +2,7 @@
   "version": 2,
   "projects": {
     "backups": "apps/backups",
+    "watcher": "apps/watcher",
     "zabo": "apps/zabo"
   }
 }
