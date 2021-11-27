@@ -1,9 +1,9 @@
-import { Injectable, Inject } from "@nestjs/common";
+import { Injectable, Inject, OnApplicationBootstrap } from '@nestjs/common';
 import { ClientProxy } from "@nestjs/microservices";
-import { map } from "rxjs/operators";
+import { map, tap } from 'rxjs/operators';
 
 @Injectable()
-export class AppService {
+export class AppService implements OnApplicationBootstrap{
   constructor(
     @Inject("SERVICE_A") private readonly clientServiceA: ClientProxy
   ) {}
@@ -14,8 +14,15 @@ export class AppService {
     const payload = {};
     return this.clientServiceA
       .send<string>(pattern, payload)
-      .pipe(
-        map((message: string) => ({ message, duration: Date.now() - startTs }))
-      );
+  }
+
+  async onApplicationBootstrap(): Promise<any> {
+    await this.clientServiceA.connect();
+    //setInterval(() => {
+      //const startTs = Date.now();
+      const b = await this.clientServiceA.send<string>({ cmd: "ping" }, {})
+      b.subscribe((m) => console.log(m));
+      //return b;
+    //}, 500)
   }
 }

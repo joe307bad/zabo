@@ -7,6 +7,7 @@ import { delay } from "rxjs/operators";
 export class AppController {
   @MessagePattern({ cmd: "ping" })
   ping(_: any) {
-    return of("hot reloadfd").pipe(delay(1000));
+    console.log('pong from backups ' + Date.now())
+    //return { "backups": "response"};
   }
 }
