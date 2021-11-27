@@ -5,7 +5,7 @@ import { map, tap } from 'rxjs/operators';
 @Injectable()
 export class AppService implements OnApplicationBootstrap{
   constructor(
-    @Inject("SERVICE_A") private readonly clientServiceA: ClientProxy
+    @Inject("NATS_CLIENT") private readonly clientServiceA: ClientProxy
   ) {}
 
   pingServiceA() {
@@ -18,11 +18,8 @@ export class AppService implements OnApplicationBootstrap{
 
   async onApplicationBootstrap(): Promise<any> {
     await this.clientServiceA.connect();
-    //setInterval(() => {
-      //const startTs = Date.now();
-      const b = await this.clientServiceA.send<string>({ cmd: "ping" }, {})
-      b.subscribe((m) => console.log(m));
-      //return b;
-    //}, 500)
+    const b = await this.clientServiceA.send<string>({ cmd: "ping" }, {})
+    b.subscribe((m) => console.log(m));
+
   }
 }
