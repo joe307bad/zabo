@@ -10,8 +10,7 @@ nx run-many --target=serve --projects=zabo,backups,watcher --parallel
 ```
 
 ## ToDo
-- [X] Messaging across services w/request-response + event-based
+- [X] Messaging across services w/request-response
+- [ ] Kong api gateway and tracing with zipkin https://konghq.com/blog/tracing-with-zipkin-in-kong-2-1-0/
 - [ ] Build a single lib that holds all the interfaces/contracts for all the microservices
-- [ ] Send message across microservices and add something to trace messages across microservices
-- [ ] Build out a docker-compose.yml focused on spinning up all services + kong api gateway + frontend for development
 - [ ] implement authentication and route specific authorization
