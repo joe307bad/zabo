@@ -1,6 +1,5 @@
 import { Injectable, Inject, OnApplicationBootstrap } from '@nestjs/common';
 import { ClientProxy } from "@nestjs/microservices";
-import { map, tap } from 'rxjs/operators';
 
 @Injectable()
 export class AppService implements OnApplicationBootstrap{

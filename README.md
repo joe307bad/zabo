@@ -6,7 +6,7 @@ docker-compose up -d
 ```
 ```
 // Run microservices
-nx run-many --target=serve --projects=zabo,backups,watcher --parallel
+nx run-many --target=serve --projects=zabo,backups --parallel
 ```
 
 ## ToDo
