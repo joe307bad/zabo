@@ -17,12 +17,7 @@
     "default": {
       "runner": "@nrwl/nx-cloud",
       "options": {
-        "cacheableOperations": [
-          "build",
-          "lint",
-          "test",
-          "e2e"
-        ],
+        "cacheableOperations": ["build", "lint", "test", "e2e"],
         "accessToken": "MGZkNDAwMWQtMDQ0My00OGEyLTliYmQtN2YxMzA2OWMxMGE2fHJlYWQtd3JpdGU="
       }
     }
@@ -35,5 +30,12 @@
       }
     ]
   },
-  "defaultProject": "zabo"
+  "defaultProject": "zabo",
+  "generators": {
+    "@nrwl/react": {
+      "application": {
+        "babel": true
+      }
+    }
+  }
 }
