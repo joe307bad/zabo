@@ -1,0 +1,33 @@
+{
+  "root": "libs/design/tailwind",
+  "sourceRoot": "libs/design/tailwind/src",
+  "projectType": "library",
+  "targets": {
+    "watch": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "commands": [
+          {
+            "command": "tailwindcss -c ./libs/design/tailwind/tailwind.config.js -o ./libs/design/tailwind/src/tailwind.css --watch"
+          }
+        ]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/design/tailwind/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/design/tailwind"],
+      "options": {
+        "jestConfig": "libs/design/tailwind/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

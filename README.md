@@ -16,9 +16,19 @@ nx g @nrwl/react:component button --project=design-react --export
 // generate .stories.ts
 nx g @nrwl/react:stories --project=design-react
 ```
+## Run `design/tailwind` + `storybook design-react`
+```
+// start tailwind watcher that rewrites tailwind.css when tailwind.config.js is changed
+nx watch design-tailwind
+```
+```
+// start storybook for react components, this project references tailwind.css and reloads when its changed
+nx storybook design-react
+```
 ## ToDo frontend
 - [X] Build `lib/design/tailwind` that takes a high level tailwind configuration and generates the utility classes/css
-- [ ] When I change `lib/design/tailwind/src/tailwind.css` I want the storybook instance of `lib/design/react` to reload
+- [X] When I change `lib/design/tailwind/src/tailwind.css` I want the storybook instance of `lib/design/react` to reload 
+- [ ] Implement a component in `lib/design/react` that utilizes utility first classes from `lib/design/tailwind/src/tailwind.css`
 - [ ] Build `lib/design/react` storybook/design system
 - [ ] Build `lib/design/angular` storybook/design system
 - [ ] [Compose](https://storybook.js.org/docs/react/workflows/storybook-composition#compose-local-storybooks) both to see how easy it is to make changes and see affect components across different frameworks

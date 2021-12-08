@@ -3,7 +3,6 @@
   "projects": {
     "backups": "apps/backups",
     "design-react": "libs/design/react",
-    "design-react-e2e": "apps/design-react-e2e",
     "design-tailwind": "libs/design/tailwind",
     "zabo": "apps/zabo"
   }
