@@ -13,19 +13,14 @@
         ]
       }
     },
-    "lint": {
-      "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+    "build": {
+      "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "lintFilePatterns": ["libs/design/tailwind/**/*.ts"]
-      }
-    },
-    "test": {
-      "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/libs/design/tailwind"],
-      "options": {
-        "jestConfig": "libs/design/tailwind/jest.config.js",
-        "passWithNoTests": true
+        "commands": [
+          {
+            "command": "tailwindcss -c ./libs/design/tailwind/tailwind.config.js -o ./libs/design/tailwind/src/tailwind.css --minify"
+          }
+        ]
       }
     }
   },

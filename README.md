@@ -25,9 +25,15 @@ nx watch design-tailwind
 // start storybook for react components, this project references tailwind.css and reloads when its changed
 nx storybook design-react
 ```
+
+
 ## ToDo frontend
-- [X] Build `lib/design/tailwind` that takes a high level tailwind configuration and generates the utility classes/css
-- [X] When I change `lib/design/tailwind/src/tailwind.css` I want the storybook instance of `lib/design/react` to reload 
+- [X] ✅ Build `libs/design/tailwind` that takes a high level tailwind configuration and generates the utility classes/css
+- [X] ✅ When I change `libs/design/tailwind/src/tailwind.css` I want the storybook instance of `libs/design/react` to reload 
+- [X] ✅ Optimize `tailwind.css` by only compiling class names used in `libs/design/tailwind/src/index.ts`
+- [ ] How do we run `design-react-native` as a Storybook instance?
+  - [Transform `tailwind.css`](https://github.com/kristerkari/react-native-css-transformer) into readable styles for react-native
+  - Probably will have to [create a `storybook-react-native-expo`](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) app to run the Storybook configuration contained in `libs/design/react-native/.storybook` 
 - [ ] Implement a component in `lib/design/react` that utilizes utility first classes from `lib/design/tailwind/src/tailwind.css`
 - [ ] Build `lib/design/react` storybook/design system
 - [ ] Build `lib/design/angular` storybook/design system

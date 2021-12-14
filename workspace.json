@@ -3,6 +3,7 @@
   "projects": {
     "backups": "apps/backups",
     "design-react": "libs/design/react",
+    "design-react-native": "libs/design/react-native",
     "design-tailwind": "libs/design/tailwind",
     "zabo": "apps/zabo"
   }

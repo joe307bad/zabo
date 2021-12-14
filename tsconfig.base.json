@@ -16,6 +16,7 @@
     "baseUrl": ".",
     "paths": {
       "@zabo/design/react": ["libs/design/react/src/index.ts"],
+      "@zabo/design/react-native": ["libs/design/react-native/src/index.ts"],
       "@zabo/design/tailwind": ["libs/design/tailwind/src/index.ts"]
     }
   },
