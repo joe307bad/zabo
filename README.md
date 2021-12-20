@@ -1,39 +1,48 @@
 # Zabo
 ## Development
+Start nats + sphqxe/nats-webui
 ```
-// Start nats + sphqxe/nats-webui
 docker-compose up -d
 ```
+Run microservices
 ```
-// Run microservices
 nx run-many --target=serve --projects=zabo,backups --parallel
 ```
 ## Add a component
 ```
 nx g @nrwl/react:component button --project=design-react --export
 ```
+Generate `.stories.ts`
 ```
-// generate .stories.ts
 nx g @nrwl/react:stories --project=design-react
 ```
 ## Run `design/tailwind` + `storybook design-react`
+Start tailwind watcher that rewrites `tailwind.css` when `tailwind.config.js` is changed
 ```
-// start tailwind watcher that rewrites tailwind.css when tailwind.config.js is changed
 nx watch design-tailwind
 ```
+Start storybook for react components, this project references `tailwind.css` and reloads when its changed
 ```
-// start storybook for react components, this project references tailwind.css and reloads when its changed
 nx storybook design-react
 ```
-
+## Compile `design-tailwind` for different platforms
+For react-native.
+Uses [tailwind-rn](https://github.com/vadimdemedes/tailwind-rn)
+```
+nx build-rn design-tailwind
+```
+For react
+```
+nx build design-tailwind
+```
 
 ## ToDo frontend
 - [X] ✅ Build `libs/design/tailwind` that takes a high level tailwind configuration and generates the utility classes/css
 - [X] ✅ When I change `libs/design/tailwind/src/tailwind.css` I want the storybook instance of `libs/design/react` to reload 
 - [X] ✅ Optimize `tailwind.css` by only compiling class names used in `libs/design/tailwind/src/index.ts`
-- [ ] How do we run `design-react-native` as a Storybook instance?
-  - [Transform `tailwind.css`](https://github.com/kristerkari/react-native-css-transformer) into readable styles for react-native
-  - Probably will have to [create a `storybook-react-native-expo`](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) app to run the Storybook configuration contained in `libs/design/react-native/.storybook` 
+- [X] ✅ Use a central `tailwind.config.js` and compile CSS assets for different platorms (react & react-native)
+- [ ] View `design-react-native` Storybook instance simultaneously with `design-react` Storybook instance to have a side by side comparison.
+  - Probably will have to [create a `storybook-react-native-expo`](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) and then run this in parallel with `nx storybook react`
 - [ ] Implement a component in `lib/design/react` that utilizes utility first classes from `lib/design/tailwind/src/tailwind.css`
 - [ ] Build `lib/design/react` storybook/design system
 - [ ] Build `lib/design/angular` storybook/design system

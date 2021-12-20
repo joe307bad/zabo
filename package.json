@@ -27,6 +27,7 @@
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.4.0",
     "tailwind": "^4.0.0",
+    "tailwind-rn": "^3.0.1",
     "tailwindcss": "^2.2.19",
     "tslib": "^2.0.0"
   },
