@@ -6,9 +6,7 @@
     "build-rn": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": [
-          "create-tailwind-rn"
-        ],
+        "commands": ["create-tailwind-rn"],
         "cwd": "libs/design/tailwind"
       }
     },
@@ -25,8 +23,7 @@
     "build": {
       "executor": "@nrwl/workspace:run-commands",
       "options": {
-        "commands": ["tailwindcss -o ./src/tailwind.css --minify"
-        ],
+        "commands": ["tailwindcss -o ./src/tailwind.css --minify"],
         "cwd": "libs/design/tailwind"
       }
     }
