@@ -5,12 +5,16 @@
   "targets": {
     "build": {
       "executor": "@nrwl/node:build",
-      "outputs": ["{options.outputPath}"],
+      "outputs": [
+        "{options.outputPath}"
+      ],
       "options": {
         "outputPath": "dist/apps/backups",
         "main": "apps/backups/src/main.ts",
         "tsConfig": "apps/backups/tsconfig.app.json",
-        "assets": ["apps/backups/src/assets"]
+        "assets": [
+          "apps/backups/src/assets"
+        ]
       },
       "configurations": {
         "production": {
@@ -34,14 +38,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/backups/**/*.ts"]
+        "lintFilePatterns": [
+          "apps/backups/**/*.ts"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/backups"],
+      "outputs": [
+        "coverage/apps/backups"
+      ],
       "options": {
         "jestConfig": "apps/backups/jest.config.js",
         "passWithNoTests": true
