@@ -11,6 +11,13 @@
       "projectType": "application",
       "generators": {},
       "targets": {
+        "storybook": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "command": "start-storybook -p 6006",
+            "cwd": "apps/react-native-storybook"
+          }
+        },
         "bundle": {
           "executor": "nx-react-native-expo:bundle",
           "options": {}

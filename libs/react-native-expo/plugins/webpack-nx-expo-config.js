@@ -13,7 +13,7 @@ exports.WebpackConfigNxExpo = (prevConfig) => {
     var _a, _b;
     const oldPlugins = ((_a = prevConfig === null || prevConfig === void 0 ? void 0 : prevConfig.resolve) === null || _a === void 0 ? void 0 : _a.plugins) || [];
     const oldRules = ((_b = prevConfig === null || prevConfig === void 0 ? void 0 : prevConfig.module) === null || _b === void 0 ? void 0 : _b.rules) || [];
-    prevConfig.resolve = Object.assign(Object.assign({}, prevConfig.resolve), { plugins: [...oldPlugins, new tsconfig_paths_webpack_plugin_1.TsconfigPathsPlugin()] });
+    prevConfig.resolve = Object.assign(Object.assign({}, prevConfig.resolve), {});
     prevConfig.module.rules = [...oldRules, babelLoaderRules];
     return prevConfig;
 };

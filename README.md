@@ -44,6 +44,27 @@ nx build design-tailwind
 - [ ] View `design-react-native` Storybook instance simultaneously with `design-react` Storybook instance to have a side by side comparison.
   - [This patch](https://github.com/tk-o/nx-react-native-expo/tree/patch-1) should enable using `nx-react-native-expo`. From here, we will create an expo app solely for the purpose to run a Storybook instance for the components in `design-react-native`
   - Probably will have to [create a `storybook-react-native-expo`](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) and then run this in parallel with `nx storybook react`
+  - References:
+    - [https://github.com/dannyhw/expo-storybook-starter](https://github.com/dannyhw/expo-storybook-starter)
+    - https://github.com/elderfo/react-native-storybook-loader
+    - https://github.com/Shopify/restyle
+    - https://github.com/ugglr/react-native-storybook-boilerplate
+  - Running into this error:
+    ```
+    Error: Template execution failed: ReferenceError: options is not defined
+    at /Users/joebad/Source/bada/zabo1/zabo/node_modules/html-webpack-plugin/index.js:454:33
+    at runMicrotasks (<anonymous>)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async Promise.all (index 1)
+    ReferenceError: options is not defined
+    ```
+    Adding these lines
+    ```
+    templateParams.options = {};
+    templateParams.files = { css: [], js: []};
+    ```
+    above this line seems to make a difference. It also seemse that the template located `node_modules/@storybook/core-server/node_modules/@storybook/core-common/dist/cjs/templates/index.ejs` is the `options` referred to in the error. This indicates to me that when running Storybook using `nx storybook react-native-storybook`, the builder is having trouble rendering this template for some reason. I suspect theres some weirdness with the Webpack directory context or configuration.
+      
 - [ ] Implement a component in `lib/design/react` that utilizes utility first classes from `lib/design/tailwind/src/tailwind.css`
 - [ ] Build `lib/design/react` storybook/design system
 - [ ] Build `lib/design/angular` storybook/design system
