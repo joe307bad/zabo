@@ -1,5 +1,13 @@
-import registerRootComponent from 'expo/build/launch/registerRootComponent';
+import StorybookUIRoot from "./storybook";
+import { Platform, StatusBar, View } from "react-native";
 
-import App from './App';
-
-registerRootComponent(App);
+export default () => (
+  <View
+    style={{
+      flex: 1,
+      marginTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+    }}
+  >
+    <StorybookUIRoot />
+  </View>
+);

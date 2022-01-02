@@ -11,6 +11,20 @@
       "projectType": "application",
       "generators": {},
       "targets": {
+        "serve": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "apps/react-native-storybook",
+            "command": "ls"
+          }
+        },
+        "storybook": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "cwd": "apps/react-native-storybook",
+            "command": "start-storybook"
+          }
+        },
         "bundle": {
           "executor": "nx-react-native-expo:bundle",
           "options": {}
