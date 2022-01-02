@@ -1,21 +1,24 @@
+const rootMain = require('../../../.storybook/main');
+
 module.exports = {
+  ...rootMain,
+
+  core: { ...rootMain.core, builder: 'webpack5' },
+
   stories: [
-    "../stories/**/*.stories.mdx",
-    "../stories/**/*.stories.@(js|jsx|ts|tsx)",
+    ...rootMain.stories,
+    '../src/app/**/*.stories.mdx',
+    '../src/app/**/*.stories.@(js|jsx|ts|tsx)',
   ],
-  addons: [
-    "@storybook/addon-links",
-    "@storybook/addon-essentials",
-    "@storybook/addon-react-native-web",
-  ],
-  framework: "@storybook/react-native",
-  core: {
-    builder: 'webpack5',
-  },
-  webpackFinal: async(config, {configType}) => {
-    //debugger;
-    // remove html-webpack-plugin
-    config.plugins.splice(1, 1)
+  addons: [...rootMain.addons, '@nrwl/react/plugins/storybook'],
+  webpackFinal: async (config, { configType }) => {
+    // apply any global webpack configs that might have been specified in .storybook/main.js
+    if (rootMain.webpackFinal) {
+      config = await rootMain.webpackFinal(config, { configType });
+    }
+
+    // add your own webpack tweaks if needed
+
     return config;
-  }
+  },
 };
