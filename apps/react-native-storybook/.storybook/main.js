@@ -12,4 +12,10 @@ module.exports = {
   core: {
     builder: 'webpack5',
   },
+  webpackFinal: async(config, {configType}) => {
+    //debugger;
+    // remove html-webpack-plugin
+    config.plugins.splice(1, 1)
+    return config;
+  }
 };
