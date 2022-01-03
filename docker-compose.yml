@@ -11,11 +11,11 @@ services:
       - "4222:4222"
       - "8222:8222"
       - "6222:6222"
-  kong:
-    build: ./kong
-    restart: always
-    environment:
-      KONG_DATABASE: "off"
-    ports:
-      - "8001:8001"
-      - "8000:8000"
+#  kong:
+#    build: ./kong
+#    restart: always
+#    environment:
+#      KONG_DATABASE: "off"
+#    ports:
+#      - "8001:8001"
+#      - "8000:8000"
