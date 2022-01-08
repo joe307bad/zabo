@@ -1,79 +1,71 @@
-# Zabo
-## Backend development
-Start nats + sphqxe/nats-webui
+# Nx Expo + Storybook React Native
+
+Works on iOS, and Android (but obscured by status bar). Web doesn't work, yet -- nor does MDX style stories.
+
+Note: Also works with bare-bones RN apps very handily!
+
+![Recording of Storybook in iOS simulator](screen-recording.gif)
+
+## Steps to Recreate
+
+### 1. Generate Environment
+
+Create normal `nx-react-native-expo` workspace + expo app, by [following the plugin instructions](https://github.com/JacopoPatroclo/nx-react-native-expo)
+
+### 2. Adapt RN Storybook Setup Instructions
+
+Then `cd` into your app directory and follow the (really excellent!) [`storybookjs/react-native` instructions](https://github.com/storybookjs/react-native/blob/next-6.0/v6README.md), with a couple modifications described below
+
+Note: Install the Storybook dependencies to the root `package.json`
+
+#### 2a. Adapt metro.config.js
+
+The main thing `nx-react-native-expo` does is export a function make the metro config compatible with the Nx monorepo, so the instructions from `storybookjs/react-native` need to be adapted like so:
+
 ```
-docker-compose up -d
-```
-Run microservices
-```
-nx run-many --target=serve --projects=zabo,backups --parallel
-```
-## Add a component
-```
-nx g @nrwl/react:component button --project=design-react --export
-```
-Generate `.stories.ts`
-```
-nx g @nrwl/react:stories --project=design-react
-```
-## Run `design/tailwind` + `storybook design-react`
-Start tailwind watcher that rewrites `tailwind.css` when `tailwind.config.js` is changed
-```
-nx watch design-tailwind
-```
-Start storybook for react components, this project references `tailwind.css` and reloads when its changed
-```
-nx storybook design-react
-```
-## Compile `design-tailwind` for different platforms
-For react-native.
-Uses [tailwind-rn](https://github.com/vadimdemedes/tailwind-rn)
-```
-nx build-rn design-tailwind
-```
-For react
-```
-nx build design-tailwind
+const { withNxMetro } = require('nx-react-native-expo');
+const { getDefaultConfig } = require('@expo/metro-config');
+
+const defaultConfig = getDefaultConfig(__dirname);
+
+
+defaultConfig.resolver.resolverMainFields.push('sbmodern', 'main');
+defaultConfig.transformer.getTransformOptions = async () => ({
+  transform: {
+    experimentalImportSupport: false,
+    inlineRequires: false,
+  }
+})
+
+module.exports = withNxMetro(defaultConfig);
 ```
 
-## ToDo frontend
-- [X] ✅ Build `libs/design/tailwind` that takes a high level tailwind configuration and generates the utility classes/css
-- [X] ✅ When I change `libs/design/tailwind/src/tailwind.css` I want the storybook instance of `libs/design/react` to reload
-- [X] ✅ Optimize `tailwind.css` by only compiling class names used in `libs/design/tailwind/src/index.ts`
-- [X] ✅ Use a central `tailwind.config.js` and compile CSS assets for different platforms (react & react-native)
-- [ ] View `design-react-native` Storybook instance simultaneously with `design-react` Storybook instance to have a side by side comparison.
-  - [This patch](https://github.com/tk-o/nx-react-native-expo/tree/patch-1) should enable using `nx-react-native-expo`. From here, we will create an expo app solely for the purpose to run a Storybook instance for the components in `design-react-native`
-  - Probably will have to [create a `storybook-react-native-expo`](https://storybook.js.org/tutorials/intro-to-storybook/react-native/en/get-started/) and then run this in parallel with `nx storybook react`
-  - References:
-    - [https://github.com/dannyhw/expo-storybook-starter](https://github.com/dannyhw/expo-storybook-starter)
-    - https://github.com/elderfo/react-native-storybook-loader
-    - https://github.com/Shopify/restyle
-    - https://github.com/ugglr/react-native-storybook-boilerplate
-  - Running into this error:
-    ```
-    Error: Template execution failed: ReferenceError: options is not defined
-    at /Users/joebad/Source/bada/zabo1/zabo/node_modules/html-webpack-plugin/index.js:454:33
-    at runMicrotasks (<anonymous>)
-    at processTicksAndRejections (node:internal/process/task_queues:96:5)
-    at async Promise.all (index 1)
-    ReferenceError: options is not defined
-    ```
-    Adding these lines
-    ```
-    templateParams.options = {};
-    templateParams.files = { css: [], js: []};
-    ```
-    above this line seems to make a difference. It also seemse that the template located `node_modules/@storybook/core-server/node_modules/@storybook/core-common/dist/cjs/templates/index.ejs` is the `options` referred to in the error. This indicates to me that when running Storybook using `nx storybook react-native-storybook`, the builder is having trouble rendering this template for some reason. I suspect theres some weirdness with the Webpack directory context or configuration.
+#### 2b. Create Nx workspace command for 'prestart'
 
-- [ ] Implement a component in `lib/design/react` that utilizes utility first classes from `lib/design/tailwind/src/tailwind.css`
-- [ ] Build `lib/design/react` storybook/design system
-- [ ] Build `lib/design/angular` storybook/design system
-- [ ] [Compose](https://storybook.js.org/docs/react/workflows/storybook-composition#compose-local-storybooks) both to see how easy it is to make changes and see affect components across different frameworks
+Add the `prestart` command from the `storybookjs/react-native` instructions as a workspace command with a `cwd` definition pointing to your app directory.
 
-## ToDo backend
-- [X] Messaging across services w/request-response
-- [ ] Inter-ms communication
-  - [ ] http://diego-pacheco.blogspot.com/2019/02/getting-started-with-istio-and-minikube.html
-  - [ ] Kong api gateway and tracing with zipkin https://konghq.com/blog/tracing-with-zipkin-in-kong-2-1-0/
-- [ ] Build a single lib that holds all the interfaces/contracts for all the microservices
-- [ ] implement authentication and route specific authorization
+You'll need this in order for new stories to populate into the `storybook.requires.js`
+
+```
+        "prestart": {
+          "executor": "@nrwl/workspace:run-commands",
+          "options": {
+            "commands": ["sbn-get-stories"],
+            "cwd": "apps/expo-test-app"
+          }
+        },
+```
+
+### 3. Start Apps
+
+`yarn nx run expo-test-app:run-ios`
+`yarn nx run expo-test-app:run-android`
+
+## Next Steps
+
+- [ ] try with library
+- [ ] try with root level config inheritance (like @nrwl/storybook)
+- [ ] look into MDX support
+- [ ] look into web support
+- [ ] create generator/schematic?
+- [ ] Add `SafeAreaView` to fix android overlapping with status bar

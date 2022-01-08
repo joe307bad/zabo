@@ -1,11 +1,55 @@
 {
   "version": 2,
   "projects": {
-    "backups": "apps/backups",
-    "zabo": "apps/zabo"
+    "react-native-storybook": {
+      "root": "apps/react-native-storybook",
+      "sourceRoot": "apps/react-native-storybook/src",
+      "projectType": "application",
+      "generators": {},
+      "targets": {
+        "bundle": {
+          "executor": "nx-react-native-expo:bundle",
+          "options": {}
+        },
+        "start": {
+          "executor": "nx-react-native-expo:start",
+          "options": {}
+        },
+        "run-ios": {
+          "executor": "nx-react-native-expo:run-ios",
+          "options": {}
+        },
+        "run-android": {
+          "executor": "nx-react-native-expo:run-android",
+          "options": {}
+        },
+        "run-web": {
+          "executor": "nx-react-native-expo:run-web",
+          "options": {}
+        },
+        "publish": {
+          "executor": "nx-react-native-expo:publish",
+          "options": {}
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": [
+              "apps/react-native-storybook/**/*.{js,ts,tsx}"
+            ]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/react-native-storybook/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    }
   },
   "cli": {
-    "defaultCollection": "@nrwl/node"
-  },
-  "defaultProject": "zabo"
+    "defaultCollection": "@nrwl/workspace"
+  }
 }

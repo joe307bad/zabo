@@ -1,10 +1,7 @@
 {
-  "npmScope": "zabo",
+  "npmScope": "expo-storybook",
   "affected": {
-    "defaultBase": "main"
-  },
-  "cli": {
-    "defaultCollection": "@nrwl/node"
+    "defaultBase": "master"
   },
   "implicitDependencies": {
     "package.json": {
@@ -17,7 +14,12 @@
     "default": {
       "runner": "@nrwl/workspace/tasks-runners/default",
       "options": {
-        "cacheableOperations": ["build", "lint", "test", "e2e"]
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ]
       }
     }
   },
@@ -29,5 +31,9 @@
       }
     ]
   },
-  "defaultProject": "backups"
+  "projects": {
+    "react-native-storybook": {
+      "tags": []
+    }
+  }
 }
