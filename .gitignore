@@ -94,7 +94,6 @@ buck-out/
 
 ## CocoaPods
 **/ios/Pods/
-/
 
 ## Nested node_modules
 
@@ -109,3 +108,8 @@ npm-debug.*
 *.orig.*
 web-build/
 apps/react-native-storybook/node_modules
+## Nested node_modules
+
+node_modules/
+
+apps/react-native-showcase-e2e/artifacts

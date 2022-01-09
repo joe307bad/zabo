@@ -5,56 +5,7 @@
     "design-react": "libs/design/react",
     "design-react-native": "libs/design/react-native",
     "design-tailwind": "libs/design/tailwind",
-    "react-native-storybook": {
-      "root": "apps/react-native-storybook",
-      "sourceRoot": "apps/react-native-storybook/src",
-      "projectType": "application",
-      "generators": {},
-      "targets": {
-        "bundle": {
-          "executor": "nx-react-native-expo:bundle",
-          "options": {}
-        },
-        "start": {
-          "executor": "nx-react-native-expo:start",
-          "options": {}
-        },
-        "run-ios": {
-          "executor": "nx-react-native-expo:run-ios",
-          "options": {}
-        },
-        "run-android": {
-          "executor": "nx-react-native-expo:run-android",
-          "options": {}
-        },
-        "run-web": {
-          "executor": "nx-react-native-expo:run-web",
-          "options": {}
-        },
-        "publish": {
-          "executor": "nx-react-native-expo:publish",
-          "options": {}
-        },
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "options": {
-            "lintFilePatterns": [
-              "apps/react-native-storybook/**/*.{js,ts,tsx}"
-            ]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": [
-            "coverage/apps/react-native-storybook"
-          ],
-          "options": {
-            "jestConfig": "apps/react-native-storybook/jest.config.js",
-            "passWithNoTests": true
-          }
-        }
-      }
-    },
+    "react-native-showcase": "apps/react-native-showcase",
     "zabo": "apps/zabo"
   }
 }

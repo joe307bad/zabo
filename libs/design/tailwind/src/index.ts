@@ -1,4 +1,6 @@
-export default {
+import styles from '../styles.json';
+
+const Styles =  {
   Text: {
     Variants: {
       H1: 'text-xs',
@@ -7,4 +9,11 @@ export default {
       H4: 'text-6xl'
     }
   }
+}
+
+const ReactNativeStyles = styles;
+
+export {
+  Styles as default,
+  ReactNativeStyles
 }
