@@ -113,3 +113,8 @@ apps/react-native-storybook/node_modules
 node_modules/
 
 apps/react-native-showcase-e2e/artifacts
+## Nested node_modules
+
+node_modules/
+
+apps/showcase/react-native-e2e/artifacts

@@ -5,7 +5,7 @@
     "design-react": "libs/design/react",
     "design-react-native": "libs/design/react-native",
     "design-tailwind": "libs/design/tailwind",
-    "react-native-showcase": "apps/react-native-showcase",
+    "showcase-react-native": "apps/showcase/react-native",
     "zabo": "apps/zabo"
   }
 }
