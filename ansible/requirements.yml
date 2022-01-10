@@ -1,5 +1,0 @@
-collections:
-  - name: community.general
-
-roles:
-  - src: https://github.com/angristan/ansible-yarn

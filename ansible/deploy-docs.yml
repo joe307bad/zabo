@@ -1,9 +1,10 @@
 ---
 - hosts: web
+  become: yes
   tasks:
     - name: Build docs
-      community.general.yarn:
-        cmd: build:docs
+      ansible.builtin.shell:
+        cmd: yarn build:docs
         chdir: ../
       delegate_to: localhost
       timeout: 5
@@ -11,3 +12,4 @@
       copy:
         src: ../dist/apps/docs
         dest: "{{docs_dir}}"
+      tags: publish-docs

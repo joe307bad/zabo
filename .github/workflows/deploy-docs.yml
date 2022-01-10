@@ -3,15 +3,32 @@ on: [push]
 jobs:
   Deploy-docs:
     runs-on: ubuntu-latest
+    if: ${{ contains(github.event.head_commit.message, '[docs]') }}
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.3.0
+        name: Checkout [main]
         with:
-          cmd: install
+          fetch-depth: 0
+      - name: Derive appropriate SHAs for base and head for `nx affected` commands
+        uses: nrwl/nx-set-shas@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - run: yarn install
+      - run: npx nx build docs
       - uses: kielabokkie/ssh-key-and-known-hosts-action@v1
         with:
           ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
           ssh-host: joebad.com
+#      - name: Deploy docs
+#        uses: burnett01/rsync-deployments@5.2
+#        with:
+#          switches: -avzr --delete
+#          path: src/
+#          remote_path: /var/www/html/
+#          remote_host: example.com
+#          remote_user: debian
+#          remote_key: ${{ secrets.DEPLOY_KEY }}
       - name: Deploy docs
         uses: dawidd6/action-ansible-playbook@v2
         env:
@@ -20,7 +37,6 @@ jobs:
           key: ${{secrets.SSH_PRIVATE_KEY}}
           playbook: deploy-docs.yml
           directory: ansible
-          requirements: requirements.yml
           inventory: |
             [web]
             joebad.com
@@ -29,4 +45,5 @@ jobs:
             ansible_ssh_user=rancher
           options: |
             --extra-vars docs_dir=${{secrets.DOCS_REMOTE_DIR}}
+            --tags publish-docs
 
