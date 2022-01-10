@@ -21,7 +21,9 @@
     },
     "bundle-ios": {
       "executor": "@nrwl/react-native:bundle",
-      "outputs": ["apps/showcase/react-native/build"],
+      "outputs": [
+        "apps/showcase/react-native/build"
+      ],
       "options": {
         "entryFile": "apps/showcase/react-native/src/main.tsx",
         "platform": "ios",
@@ -58,14 +60,20 @@
     },
     "lint": {
       "executor": "@nrwl/linter:eslint",
-      "outputs": ["{options.outputFile}"],
+      "outputs": [
+        "{options.outputFile}"
+      ],
       "options": {
-        "lintFilePatterns": ["apps/showcase/react-native/**/*.{ts,tsx,js,jsx}"]
+        "lintFilePatterns": [
+          "apps/showcase/react-native/**/*.{ts,tsx,js,jsx}"
+        ]
       }
     },
     "test": {
       "executor": "@nrwl/jest:jest",
-      "outputs": ["coverage/apps/showcase/react-native"],
+      "outputs": [
+        "coverage/apps/showcase/react-native"
+      ],
       "options": {
         "jestConfig": "apps/showcase/react-native/jest.config.js",
         "passWithNoTests": true

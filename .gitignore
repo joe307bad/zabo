@@ -118,3 +118,7 @@ apps/react-native-showcase-e2e/artifacts
 node_modules/
 
 apps/showcase/react-native-e2e/artifacts
+
+# Generated Docusaurus files
+.docusaurus/
+.cache-loader/

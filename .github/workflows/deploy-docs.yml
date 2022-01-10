@@ -1,0 +1,32 @@
+name: Deploy docs
+on: [push]
+jobs:
+  Deploy-docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.3.0
+        with:
+          cmd: install
+      - uses: kielabokkie/ssh-key-and-known-hosts-action@v1
+        with:
+          ssh-private-key: ${{secrets.SSH_PRIVATE_KEY}}
+          ssh-host: joebad.com
+      - name: Deploy docs
+        uses: dawidd6/action-ansible-playbook@v2
+        env:
+          DOCS_REMOTE_DIR: ${{secrets.DOCS_REMOTE_DIR}}
+        with:
+          key: ${{secrets.SSH_PRIVATE_KEY}}
+          playbook: deploy-docs.yml
+          directory: ansible
+          requirements: requirements.yml
+          inventory: |
+            [web]
+            joebad.com
+
+            [web:vars]
+            ansible_ssh_user=rancher
+          options: |
+            --extra-vars docs_dir=${{secrets.DOCS_REMOTE_DIR}}
+

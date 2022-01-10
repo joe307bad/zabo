@@ -6,6 +6,26 @@
     "design-react-native": "libs/design/react-native",
     "design-tailwind": "libs/design/tailwind",
     "showcase-react-native": "apps/showcase/react-native",
-    "zabo": "apps/zabo"
+    "zabo": "apps/zabo",
+    "docs": {
+      "projectType": "application",
+      "root": "apps/docs",
+      "sourceRoot": "apps/docs/src",
+      "targets": {
+        "build": {
+          "executor": "@nx-plus/docusaurus:browser",
+          "options": {
+            "outputPath": "dist/apps/docs"
+          }
+        },
+        "serve": {
+          "executor": "@nx-plus/docusaurus:dev-server",
+          "options": {
+            "port": 3000
+          }
+        }
+      },
+      "tags": []
+    }
   }
 }
