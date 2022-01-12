@@ -5,6 +5,16 @@
  * work well for content-centric websites.
  */
 
+html, body {
+  background-color: #454046
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: Georgia !important;
+  color: #93cae4;
+  font-weight: 100
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #25c2a0;
@@ -15,6 +25,10 @@
   --ifm-color-primary-lighter: rgb(102, 212, 189);
   --ifm-color-primary-lightest: rgb(146, 224, 208);
   --ifm-code-font-size: 95%;
+}
+
+#__docusaurus {
+  height: 100%;
 }
 
 .docusaurus-highlight-code-line {

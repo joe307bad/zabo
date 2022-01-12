@@ -29,6 +29,7 @@
     "react-dom": "17.0.2",
     "react-native": "0.66.2",
     "react-native-web": "0.13.12",
+    "rebass": "^4.0.7",
     "reflect-metadata": "^0.1.13",
     "regenerator-runtime": "0.13.7",
     "rxjs": "^7.4.0",
@@ -40,6 +41,7 @@
   "devDependencies": {
     "@babel/core": "7.12.13",
     "@babel/preset-typescript": "7.12.13",
+    "@docusaurus/module-type-aliases": "^2.0.0-beta.14",
     "@expo/webpack-config": "0.12.43",
     "@nestjs/schematics": "^7.0.0",
     "@nestjs/testing": "^7.0.0",
@@ -72,6 +74,7 @@
     "@testing-library/react": "12.1.2",
     "@testing-library/react-hooks": "7.0.2",
     "@testing-library/react-native": "8.0.0",
+    "@tsconfig/docusaurus": "^1.0.4",
     "@types/detox": "17.14.3",
     "@types/jest": "27.0.2",
     "@types/node": "14.14.33",
@@ -117,6 +120,7 @@
     "url-loader": "^3.0.0"
   },
   "resolutions": {
-    "postcss": "^8.4.4"
+    "postcss": "^8.4.4",
+    "colors": "1.4.0"
   }
 }

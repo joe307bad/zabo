@@ -39,7 +39,7 @@ nx build design-tailwind
 ## ToDo frontend
 - [X] ✅ Build `libs/design/tailwind` that takes a high level tailwind configuration and generates the utility classes/css
 - [X] ✅ When I change `libs/design/tailwind/src/tailwind.css` I want the storybook instance of `libs/design/react` to reload 
-- [X] ✅ Optimize `tailwind.css` by only compiling class names used in `libs/design/tailwind/src/index.ts`
+- [X] ✅ Optimize `tailwind.css` by only compiling class names used in `libs/design/tailwind/src/index.tsx`
 - [X] ✅ Use a central `tailwind.config.js` and compile CSS assets for different platforms (react & react-native)
 - [ ] View `design-react-native` Storybook instance simultaneously with `design-react` Storybook instance to have a side by side comparison.
   - [This patch](https://github.com/tk-o/nx-react-native-expo/tree/patch-1) should enable using `nx-react-native-expo`. From here, we will create an expo app solely for the purpose to run a Storybook instance for the components in `design-react-native`
