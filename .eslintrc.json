@@ -1,6 +1,6 @@
 {
   "root": true,
-  "ignorePatterns": ["**/*"],
+  "ignorePatterns": ["**/*", "zcli/**/*"],
   "plugins": ["@nrwl/nx"],
   "overrides": [
     {
