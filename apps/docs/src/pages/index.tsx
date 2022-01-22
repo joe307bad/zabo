@@ -66,6 +66,7 @@ function Home() {
   const context = useDocusaurusContext();
   const { siteConfig = {} } = context;
   return (
+    <Layout title="Hello">
   <Flex flexDirection="column" alignSelf='center' height='100%'  style={{height: '100%'}} justifyItems="center" alignContent="center" alignItems='center' justifyContent='center'>
     <Box alignSelf='center'  justifySelf='center' width={1/2} alignItems='center' textAlign="center">
       <Image width={200} src="img/logo.png" />
@@ -80,6 +81,7 @@ function Home() {
       </Heading>
     </Box>
   </Flex>
+    </Layout>
   );
 }
 

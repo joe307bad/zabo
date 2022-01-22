@@ -1,18 +1,18 @@
 module.exports = {
-  title: 'My Site',
-  tagline: 'The tagline of my site',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'Zabo',
+  tagline: 'A set of guides and services for your home server.',
+  url: 'https://zabo.joebad.com',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'joe307bad', // Usually your GitHub org/user name.
+  projectName: 'zabo', // Usually your repo name.
   themeConfig: {
     navbar: {
-      title: 'My Site',
+      title: 'Zabo',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Zabo\'s logo',
         src: 'img/logo.png',
       },
       items: [
@@ -24,7 +24,7 @@ module.exports = {
         },
         { to: 'blog', label: 'Blog', position: 'left' },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/joe307bad/zabo',
           label: 'GitHub',
           position: 'right',
         },

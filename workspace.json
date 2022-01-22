@@ -5,8 +5,6 @@
     "design-react": "libs/design/react",
     "design-react-native": "libs/design/react-native",
     "design-tailwind": "libs/design/tailwind",
-    "showcase-react-native": "apps/showcase/react-native",
-    "zabo": "apps/zabo",
     "docs": {
       "projectType": "application",
       "root": "apps/docs",
@@ -22,6 +20,42 @@
           "executor": "@nx-plus/docusaurus:dev-server",
           "options": {
             "port": 3000
+          }
+        }
+      },
+      "tags": []
+    },
+    "showcase-react-native": "apps/showcase/react-native",
+    "zabo": "apps/zabo",
+    "zcli": {
+      "root": "libs/zcli",
+      "sourceRoot": "libs/zcli/src",
+      "projectType": "library",
+      "targets": {
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/zcli",
+            "tsConfig": "libs/zcli/tsconfig.lib.json",
+            "packageJson": "libs/zcli/package.json",
+            "main": "libs/zcli/src/index.ts",
+            "assets": ["libs/zcli/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/zcli/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/zcli"],
+          "options": {
+            "jestConfig": "libs/zcli/jest.config.js",
+            "passWithNoTests": true
           }
         }
       },
