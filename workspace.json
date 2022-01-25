@@ -26,23 +26,46 @@
       "tags": []
     },
     "showcase-react-native": "apps/showcase/react-native",
-    "zabo": "apps/zabo",
-    "zcli": {
-      "root": "libs/zcli",
-      "sourceRoot": "libs/zcli/src",
+    "types": {
+      "root": "libs/types",
+      "sourceRoot": "libs/types/src",
       "projectType": "library",
       "targets": {
         "build": {
           "executor": "@nrwl/node:package",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/libs/zcli",
-            "tsConfig": "libs/zcli/tsconfig.lib.json",
-            "packageJson": "libs/zcli/package.json",
-            "main": "libs/zcli/src/index.ts",
-            "assets": ["libs/zcli/*.md"]
+            "outputPath": "dist/libs/types",
+            "tsConfig": "libs/types/tsconfig.lib.json",
+            "packageJson": "libs/types/package.json",
+            "main": "libs/types/src/index.ts",
+            "assets": ["libs/types/*.md"]
           }
         },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/types/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/types"],
+          "options": {
+            "jestConfig": "libs/types/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      },
+      "tags": []
+    },
+    "zabo": "apps/zabo",
+    "zcli": {
+      "root": "libs/zcli",
+      "sourceRoot": "libs/zcli/src",
+      "projectType": "library",
+      "targets": {
         "lint": {
           "executor": "@nrwl/linter:eslint",
           "outputs": ["{options.outputFile}"],
@@ -56,6 +79,17 @@
           "options": {
             "jestConfig": "libs/zcli/jest.config.js",
             "passWithNoTests": true
+          }
+        },
+        "build": {
+          "executor": "@nrwl/node:package",
+          "outputs": ["{options.outputPath}"],
+          "options": {
+            "outputPath": "dist/libs/zcli",
+            "tsConfig": "libs/zcli/tsconfig.lib.json",
+            "packageJson": "libs/zcli/package.json",
+            "main": "libs/zcli/src/index.ts",
+            "assets": ["libs/zcli/*.md"]
           }
         }
       },

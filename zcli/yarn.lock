@@ -339,7 +339,7 @@
 
 "@oclif/core@^1.0.11", "@oclif/core@^1.1.1":
   version "1.1.2"
-  resolved "https://registry.yarnpkg.com/@oclif/core/-/core-1.1.2.tgz#e8cddb248ce49daa6f49b01f593d420522a75fd1"
+  resolved "https://registry.npmjs.org/@oclif/core/-/core-1.1.2.tgz"
   integrity sha512-hoox4ygjazblt9icBs3dc0Zaw9m5S6nwzjgSnlqzJ9Kb6PzrwGtc1YOYxnJFB8z/Fyv3hpiQo3Ze2DIeGsF/wg==
   dependencies:
     "@oclif/linewrap" "^1.0.0"
@@ -374,7 +374,7 @@
 
 "@oclif/plugin-not-found@^2.2.3":
   version "2.2.4"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-not-found/-/plugin-not-found-2.2.4.tgz#fdea729face92228c19fc2bf04759909e9a986b1"
+  resolved "https://registry.npmjs.org/@oclif/plugin-not-found/-/plugin-not-found-2.2.4.tgz"
   integrity sha512-ESq4nqgtWXpF2zCjhYC+dOTcStHu9mHttmFjElSvRUPOLqL38TGwqcX07ATzw/OQAsonDVwIaH/neSfq+MmWgA==
   dependencies:
     "@oclif/color" "^1.0.0"
@@ -403,7 +403,7 @@
 
 "@oclif/plugin-warn-if-update-available@^2.0.3":
   version "2.0.4"
-  resolved "https://registry.yarnpkg.com/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.4.tgz#3d509ca2394cccf65e6622be812d7be4065a60aa"
+  resolved "https://registry.npmjs.org/@oclif/plugin-warn-if-update-available/-/plugin-warn-if-update-available-2.0.4.tgz"
   integrity sha512-9dprC1CWPjesg0Vf/rDSQH2tzJXhP1ow84cb2My1kj6e6ESulPKpctiCFSZ1WaCQFfq+crKhzlNoP/vRaXNUAg==
   dependencies:
     "@oclif/core" "^1.0.8"
@@ -1132,7 +1132,7 @@ cli-cursor@^3.1.0:
 
 cli-progress@^3.10.0:
   version "3.10.0"
-  resolved "https://registry.yarnpkg.com/cli-progress/-/cli-progress-3.10.0.tgz#63fd9d6343c598c93542fdfa3563a8b59887d78a"
+  resolved "https://registry.npmjs.org/cli-progress/-/cli-progress-3.10.0.tgz"
   integrity sha512-kLORQrhYCAtUPLZxqsAt2YJGOvRdt34+O6jl5cQGb7iF3dM55FQZlTR+rQyIK9JUcO9bBMwZsTlND+3dmFU2Cw==
   dependencies:
     string-width "^4.2.0"
@@ -1216,7 +1216,7 @@ cli-ux@6.0.6:
 
 cli-ux@^6.0.6, cli-ux@^6.0.8:
   version "6.0.8"
-  resolved "https://registry.yarnpkg.com/cli-ux/-/cli-ux-6.0.8.tgz#a3943e889df827ceab2ffbe3e46c1fff194099e9"
+  resolved "https://registry.npmjs.org/cli-ux/-/cli-ux-6.0.8.tgz"
   integrity sha512-ERJ61QDVS1fqnWhzp3cPFHbfucmkzWh/K6SlMlf5GweIb0wB4G/wtZiAeWK6TOTSFXGQdGczVHzWrG1BMqTmSw==
   dependencies:
     "@oclif/core" "^1.1.1"
@@ -1655,7 +1655,7 @@ doctrine@^3.0.0:
 
 dom-walk@^0.1.0:
   version "0.1.2"
-  resolved "https://registry.yarnpkg.com/dom-walk/-/dom-walk-0.1.2.tgz#0c548bef048f4d1f2a97249002236060daa3fd84"
+  resolved "https://registry.npmjs.org/dom-walk/-/dom-walk-0.1.2.tgz"
   integrity sha512-6QvTW9mrGeIegrFXdtQi9pk7O/nSK6lSdXW2eqUspN5LWD7UTji2Fqw5V2YLjBpHEoU9Xl/eUWNpDeZvoyOv2w==
 
 download-stats@^0.3.4:
@@ -2447,7 +2447,7 @@ glob@^7.0.0, glob@^7.0.3, glob@^7.1.2, glob@^7.1.3, glob@^7.1.4:
 
 global@^4.4.0:
   version "4.4.0"
-  resolved "https://registry.yarnpkg.com/global/-/global-4.4.0.tgz#3e7b105179006a323ed71aafca3e9c57a5cc6406"
+  resolved "https://registry.npmjs.org/global/-/global-4.4.0.tgz"
   integrity sha512-wv/LAoHdRE3BeTGz53FAamhGlPLhlssK45usmGFThIi4XqnBmjKQ16u+RNbP7WvigRZDxUsM0J3gcQ5yicaL0w==
   dependencies:
     min-document "^2.19.0"
@@ -3483,7 +3483,7 @@ mimic-response@^1.0.0:
 
 min-document@^2.19.0:
   version "2.19.0"
-  resolved "https://registry.yarnpkg.com/min-document/-/min-document-2.19.0.tgz#7bd282e3f5842ed295bb748cdd9f1ffa2c824685"
+  resolved "https://registry.npmjs.org/min-document/-/min-document-2.19.0.tgz"
   integrity sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=
   dependencies:
     dom-walk "^0.1.0"
@@ -3694,7 +3694,7 @@ normalize-package-data@^2.3.2, normalize-package-data@^2.3.4, normalize-package-
 
 normalize-package-data@^3.0.3:
   version "3.0.3"
-  resolved "https://registry.yarnpkg.com/normalize-package-data/-/normalize-package-data-3.0.3.tgz#dbcc3e2da59509a0983422884cd172eefdfa525e"
+  resolved "https://registry.npmjs.org/normalize-package-data/-/normalize-package-data-3.0.3.tgz"
   integrity sha512-p2W1sgqij3zMMyRC067Dg16bfzVH+w7hyegmpIvZ4JNjqtGOVAIvLmjBx3yP7YTe9vKJgkoNOPjwQGogDoMXFA==
   dependencies:
     hosted-git-info "^4.0.1"
@@ -3789,7 +3789,7 @@ object.pick@^1.3.0:
 
 oclif@^2:
   version "2.2.0"
-  resolved "https://registry.yarnpkg.com/oclif/-/oclif-2.2.0.tgz#610c929d2328f8db83116892a4deb382efb857ba"
+  resolved "https://registry.npmjs.org/oclif/-/oclif-2.2.0.tgz"
   integrity sha512-uQS03VbB7CjMxzdAwcINAo0bzWQmDoUdPESKm0NvPahMJ6Lj1QNd4rLdBq8U7ci4ogHvJDGerIYl6HxBwn+ubw==
   dependencies:
     "@oclif/core" "^1.0.11"
@@ -4120,7 +4120,7 @@ process-nextick-args@^2.0.0, process-nextick-args@~2.0.0:
 
 process@^0.11.10:
   version "0.11.10"
-  resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
+  resolved "https://registry.npmjs.org/process/-/process-0.11.10.tgz"
   integrity sha1-czIwDoQBYb2j5podHZGn1LwW8YI=
 
 progress@^2.0.0:
@@ -4553,7 +4553,7 @@ shelljs@^0.8.0, shelljs@^0.8.4:
 
 shx@^0.3.3:
   version "0.3.3"
-  resolved "https://registry.yarnpkg.com/shx/-/shx-0.3.3.tgz#681a88c7c10db15abe18525349ed474f0f1e7b9f"
+  resolved "https://registry.npmjs.org/shx/-/shx-0.3.3.tgz"
   integrity sha512-nZJ3HFWVoTSyyB+evEKjJ1STiixGztlqwKLTUNV5KqMWtGey9fTd4KU1gdZ1X9BV6215pswQ/Jew9NsuS/fNDA==
   dependencies:
     minimist "^1.2.3"
