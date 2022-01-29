@@ -6,25 +6,38 @@
  */
 
 html, body {
-  background-color: #454046
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: Georgia !important;
-  color: #93cae4;
   font-weight: 100
 }
 
-/* You can override the default Infima variables here. */
+html[data-theme='dark'] {
+  --ifm-color-primary: #93cae4;
+  --ifm-color-primary-dark: #75bbdc;
+  --ifm-color-primary-darker: #66b4d9;
+  --ifm-color-primary-darkest: #399ece;
+  --ifm-color-primary-light: #b1d9ec;
+  --ifm-color-primary-lighter: #c0e0ef;
+  --ifm-color-primary-lightest: #edf6fb;
+  --ifm-background-surface-color: transparent;
+}
+
 :root {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: rgb(33, 175, 144);
-  --ifm-color-primary-darker: rgb(31, 165, 136);
-  --ifm-color-primary-darkest: rgb(26, 136, 112);
-  --ifm-color-primary-light: rgb(70, 203, 174);
-  --ifm-color-primary-lighter: rgb(102, 212, 189);
-  --ifm-color-primary-lightest: rgb(146, 224, 208);
-  --ifm-code-font-size: 95%;
+  --ifm-color-primary: #b222d1;
+  --ifm-color-primary-dark: #a01fbc;
+  --ifm-color-primary-darker: #971db2;
+  --ifm-color-primary-darkest: #7d1892;
+  --ifm-color-primary-light: #be2edd;
+  --ifm-color-primary-lighter: #c139df;
+  --ifm-color-primary-lightest: #cb58e4;
+}
+
+
+
+html[data-theme='dark'] {
+  --ifm-background-color: #454046;
 }
 
 #__docusaurus {
@@ -36,4 +49,8 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
+}
+
+.navbar {
+  box-shadow: none;
 }
