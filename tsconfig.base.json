@@ -25,7 +25,7 @@
         "libs/design/tailwind/src/index.ts"
       ],
       "@zabo/types": ["libs/types/src/index.ts"],
-      "@zabo/zcli": ["libs/zcli/src/index.ts"]
+      "@zabo/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

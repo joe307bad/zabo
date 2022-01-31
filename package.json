@@ -105,7 +105,6 @@
     "metro-react-native-babel-preset": "0.66.2",
     "metro-resolver": "0.66.2",
     "nats-streaming-ui": "^0.3.1",
-    "nx-react-native-expo": "./libs/react-native-expo",
     "postcss-preset-env": "^7.0.1",
     "prettier": "^2.3.1",
     "react-native-svg": "12.1.1",

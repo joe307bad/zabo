@@ -60,40 +60,40 @@
       },
       "tags": []
     },
-    "zabo": "apps/zabo",
-    "zcli": {
-      "root": "libs/zcli",
-      "sourceRoot": "libs/zcli/src",
+    "utils": {
+      "root": "libs/utils",
+      "sourceRoot": "libs/utils/src",
       "projectType": "library",
       "targets": {
-        "lint": {
-          "executor": "@nrwl/linter:eslint",
-          "outputs": ["{options.outputFile}"],
-          "options": {
-            "lintFilePatterns": ["libs/zcli/**/*.ts"]
-          }
-        },
-        "test": {
-          "executor": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/zcli"],
-          "options": {
-            "jestConfig": "libs/zcli/jest.config.js",
-            "passWithNoTests": true
-          }
-        },
         "build": {
           "executor": "@nrwl/node:package",
           "outputs": ["{options.outputPath}"],
           "options": {
-            "outputPath": "dist/libs/zcli",
-            "tsConfig": "libs/zcli/tsconfig.lib.json",
-            "packageJson": "libs/zcli/package.json",
-            "main": "libs/zcli/src/index.ts",
-            "assets": ["libs/zcli/*.md"]
+            "outputPath": "dist/libs/utils",
+            "tsConfig": "libs/utils/tsconfig.lib.json",
+            "packageJson": "libs/utils/package.json",
+            "main": "libs/utils/src/index.ts",
+            "assets": ["libs/utils/*.md"]
+          }
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "outputs": ["{options.outputFile}"],
+          "options": {
+            "lintFilePatterns": ["libs/utils/**/*.ts"]
+          }
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "outputs": ["coverage/libs/utils"],
+          "options": {
+            "jestConfig": "libs/utils/jest.config.js",
+            "passWithNoTests": true
           }
         }
       },
       "tags": []
-    }
+    },
+    "zabo": "apps/zabo"
   }
 }

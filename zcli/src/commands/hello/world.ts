@@ -1,21 +1,25 @@
-import {Command} from '@oclif/core'
-import { zcli, generateConfigurationFile } from '@zabo/zcli';
+import { Command } from '@oclif/core';
+import { generateConfigurationFile } from '@zabo/utils';
 
 export default class World extends Command {
-  static description = 'Say hello world'
+  static description = 'Say hello world';
 
   static examples = [
     `$ oex hello world
 hello world! (./src/commands/hello/world.ts)
 `,
-  ]
+  ];
 
-  static flags = {}
+  static flags = {};
 
-  static args = []
+  static args = [];
 
   async run(): Promise<void> {
-    await generateConfigurationFile({});
-    this.log(zcli());
+    const userConfig = await generateConfigurationFile({
+      privateKeyFile: 'privateKeyFile',
+      serverLocalIpAddress: '123',
+      zaboDir: '1345',
+    });
+    this.log(userConfig);
   }
 }

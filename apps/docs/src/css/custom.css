@@ -21,7 +21,7 @@ html[data-theme='dark'] {
   --ifm-color-primary-light: #b1d9ec;
   --ifm-color-primary-lighter: #c0e0ef;
   --ifm-color-primary-lightest: #edf6fb;
-  --ifm-background-surface-color: transparent;
+  --ifm-background-surface-color: #454046;
 }
 
 :root {
@@ -32,6 +32,7 @@ html[data-theme='dark'] {
   --ifm-color-primary-light: #be2edd;
   --ifm-color-primary-lighter: #c139df;
   --ifm-color-primary-lightest: #cb58e4;
+  --ifm-background-surface-color: white;
 }
 
 
